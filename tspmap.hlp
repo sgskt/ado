@@ -1,0 +1,85 @@
+{smcl}
+{* *! version 1.0.0  17Jun2014}{...}
+{findalias asfradohelp}{...}
+{vieweralsosee "spmap" "--"}{...}
+{vieweralsosee "[R] help" "help help"}{...}
+{viewerjumpto "Syntax" "tspmap##syntax"}{...}
+{viewerjumpto "Description" "tspmap##description"}{...}
+{viewerjumpto "Options" "tspmap##options"}{...}
+{viewerjumpto "Remarks" "tspmap##remarks"}{...}
+{viewerjumpto "Examples" "tspmap##examples"}{...}
+{title:Title}
+
+{phang}
+{bf:tspmap} {hline 2} Wrapper around {help spmap:{cmd:spmap}} to create videos.
+
+
+{marker syntax}{...}
+{title:Syntax}
+
+{p 8 17 2}
+{cmdab:tspmap}
+[{varname}]
+{ifin}
+{helpb using}
+[{cmd:,} {break}
+{cmdab:t:ime(}{varname}{cmd:)}{break}
+{cmdab:mov:ie}{break}
+{help spmap##basemap1:{it:basemap_options}} {break}
+{cmdab:pol:ygon(}{help tspmap##polygon1:{it:polygon_suboptions}}{cmd:)} {break}
+{cmdab:lin:e(}{help tspmap##line1:{it:line_suboptions}}{cmd:)} {break}
+{cmdab:poi:nt(}{help tspmap##point1:{it:point_suboptions}}{cmd:)} {break}
+{cmdab:dia:gram(}{help tspmap##diagram1:{it:diagram_suboptions}}{cmd:)} {break}
+{cmdab:arr:ow(}{help tspmap##arrow1:{it:arrow_suboptions}}{cmd:)} {break}
+{cmdab:lab:el(}{help tspmap##label1:{it:label_suboptions}}{cmd:)} {break}
+{cmdab:sca:lebar(}{help tspmap##scalebar1:{it:scalebar_suboptions}}{cmd:)}
+   {break}
+{help spmap##graph1:{it:graph_options}}]
+
+
+{synoptset 20 tabbed}{...}
+{synopthdr}
+{synoptline}
+
+{syntab: Main}
+{synopt:{opt t:ime}}Specify time varying cloropleth.{p_end}
+{synopt:{opt mov:ie}}Create a movie from the images.{p_end}
+
+
+{marker description}{...}
+{title:Description}
+
+{pstd}
+{cmd:tspmap} Creates one frame for each level of the time variables specified.
+Time variables can be specified for the cloropleth map, as well as for all 
+superimposed layers. Time variables can be specified for different layers; in
+this case, the levels of those variables don't have to coincide: a frame is drawn 
+for each time, and if no observations for that time exist for a given layer, the
+observations pertaining to the previous time are used. 
+
+{marker options}{...}
+{title:Options}
+
+{dlgtab:Main}
+
+{phang}
+{opt t:ime} Specifies time variable for the cloropleth. This option can also be
+ used in the layers suboptions to specify time-varying layers. In this case, 
+ the time levels of the different time variables specified don't have to coincide.
+
+{phang}
+{opt mov:ie} Specifies that a movie be constructed from all the frames. Note that
+this requires the UNIX program {cmd:fmmpeg} to be installed.
+
+{marker remarks}{...}
+{title:Remarks}
+
+
+{marker examples}{...}
+{title:Examples}
+
+{p 4 10 2}
+
+{cmd}
+    . use FRA_adm2_data
+    . tspmap using FRA_adm2_coord, id(_ID) time(ts)

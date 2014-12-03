@@ -1,0 +1,67 @@
+{smcl}
+{* *! version 1.0.0  13May2014}{...}
+{findalias asfradohelp}{...}
+{vieweralsosee "" "--"}{...}
+{vieweralsosee "[R] help" "help help"}{...}
+{viewerjumpto "Syntax" "win2mac##syntax"}{...}
+{viewerjumpto "Description" "win2mac##description"}{...}
+{viewerjumpto "Options" "win2mac##options"}{...}
+{viewerjumpto "Remarks" "win2mac##remarks"}{...}
+{viewerjumpto "Examples" "win2mac##examples"}{...}
+{title:Title}
+
+{phang}
+{bf:win2mac} {hline 2} Help moving datasets from Windows to Mac
+
+
+{marker syntax}{...}
+{title:Syntax}
+
+{p 8 17 2}
+{cmdab:win2mac}
+{varlist}
+[{cmd:,} {it:options}]
+
+{synoptset 20 tabbed}{...}
+{synopthdr}
+{synoptline}
+{syntab:Main}
+{synopt:{opt la:bel}}Convert variable labels for {varlist} if they exist{p_end}
+{synopt:{opt val:ues}}Convert value labels for numeric variables and variable 
+values for string variables in {varlist}{p_end}
+{synoptline}
+{p2colreset}{...}
+
+{marker description}{...}
+{title:Description}
+
+{pstd}
+{cmd:win2mac} converts variable labels, value labels or string variables values
+from Windows encoding to Mac encoding, fixing problems with non-ascii characters
+ (e.g. the accents).
+
+{marker options}{...}
+{title:Options}
+
+{dlgtab:Main}
+
+{phang}
+{opt label} converts variable labels for {varlist} if they exist.
+
+{phang}
+{opt values} converts value labels for numeric variables and variable 
+values for string variables in {varlist}.
+
+{marker remarks}{...}
+{title:Remarks}
+
+{pstd}
+If neither of {opt label} or {opt value} is supplied, the program does nothing. 
+The command has no effect on ascii characters (i.e. useless for english).
+
+{marker examples}{...}
+{title:Examples}
+
+{phang}{cmd:. win2mac mpg, la}{p_end}
+
+{phang}{cmd:. win2mac mpg weight, la val}{p_end}
