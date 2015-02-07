@@ -1,0 +1,124 @@
+// Personalizes Svend Juul's Lean2 scheme  
+
+#include s2mono
+
+// Background not tinted
+color background             white
+
+// Y-axis labels horizontal
+anglestyle vertical_tick     horizontal
+
+// Axis titles: a bit larger and with more distance
+gsize axis_title             medium
+margin axis_title            small
+
+// Title margins: a bit more distance
+margin heading               small
+marigin subheading           small
+margin twoway zero
+// Legend outside in lower right corner; 1 column; short signatures; no frame
+clockdir legend_position     4
+numstyle legend_cols         1
+gsize legend_key_xsize       8
+color legend_line            background
+
+// Due to legend placement the graph should be wider
+graphsize x                  6
+
+// Black markers and outlines
+color p1              black
+color p2              black
+color p3              black
+color p4              black
+color p5              black
+color p6              black
+color p7              black
+color p8              black
+color p9              black
+color p10             black
+color p11             black
+color p12             black
+color p13             black
+color p14             black
+color p15             black
+
+// Marker symbols
+symbol p      circle_hollow
+symbol p1     circle_hollow
+symbol p2     circle
+symbol p3     plus
+symbol p4     diamond_hollow
+symbol p5     diamond
+symbol p6     square_hollow
+symbol p7     square
+symbol p8     x
+symbol p9     triangle_hollow
+symbol p10    triangle
+symbol p11    smcircle
+symbol p12    smdiamond_hollow
+symbol p13    smsquare
+symbol p14    smtriangle_hollow
+symbol p15    smx
+
+// Sharper grid lines
+linewidth major_grid         vvthin
+linewidth minor_grid         vvthin
+color grid                   black
+color major_grid             black
+color minor_grid             gs6
+
+// y-grid on
+yesno draw_major_vgrid       yes
+
+// More distinct confidence interval lines
+linewidth ci                 vvthin
+linewidth ci2                vvthin
+linewidth ci_area            vvthin
+linewidth ci2_area           vvthin
+color ci_line                gs10
+color ci_arealine            gs0
+color ci_area                gs13
+color ci_symbol              gs5
+color ci2_line               gs10
+color ci2_arealine           gs0
+color ci2_area               gs13
+color ci2_symbol             gs5
+
+// Histograms: Lighter shading
+color histogram              gs13
+color histback               gs13
+linewidth histogram          medthin
+
+// Pie graphs: Black outlines. Larger labels
+linestyle pie_lines          histogram
+textboxstyle pielabel        key_label
+
+// Box plots: Solid median line. Hollow circle outliers
+linestyle box_median         p1
+markerstyle box_marker       p1
+
+// By-graph subtitlies: No shading
+color textbox                white
+color bylabel_outline        white
+
+// Matrix plots: Small black hollow circles. Label box not tinted
+symbol matrix                smcircle_hollow
+color matrixmarkline         black
+color mat_label_box          background
+
+// Bars: Medium thin outline
+linewidth p1bar             medthin
+linewidth p2bar             medthin
+linewidth p3bar             medthin
+linewidth p4bar             medthin
+linewidth p5bar             medthin
+linewidth p6bar             medthin
+linewidth p7bar             medthin
+linewidth p8bar             medthin
+linewidth p9bar             medthin
+linewidth p10bar            medthin
+linewidth p11bar            medthin
+linewidth p12bar            medthin
+linewidth p13bar            medthin
+linewidth p14bar            medthin
+linewidth p15bar            medthin
